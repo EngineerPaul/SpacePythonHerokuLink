@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <link rel="shortcut icon" href="{% static 'img/picture.png' %}" type="image/png">
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container" style="max-width: 720px;">
+        <p style="text-align: center;">
+            <img src="{% static 'img/logo.png'%}" alt="" style="height: auto; max-width: 420px; width: 100%; margin-top: 30px;">
+        </p>
+        <h4 style="margin-top: 30px; width: 100%; text-align: center;">Добрый день!</h4>
+        <p>
+            К сожалению хостинг Heroku больше не будет функционировать.<br>
+            Сайт для записи будет размещен на другом хостинге.<br>
+            <strong>Прошу сохранить новый адрес сайта: </strong><a href={{ link }}>{{ link }}</a> <br>
+            {% if term %}
+            Данная страница перестанет существовать через {{ term }}. <br>
+            {% endif %}
+            Также сообщаю, что теперь авторизация на сайте будет происходить при помощи Вашего номера телефона или telegram ника.
+        </p>
+    </div>
+</body>
+</html>
